@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💪 Chúc Huy Thi Tốt!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Nền sao lấp lánh */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Màn hình chào ban đầu */
+        .intro {
+            color: #e0e0e0;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease;
+            letter-spacing: 2px;
+            line-height: 1.8;
+        }
+
+        .intro .highlight {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        /* Nút bắt đầu - tạo bất ngờ */
+        .start-btn {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            color: #1a1a2e;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.4);
+            animation: pulse 2s infinite;
+            letter-spacing: 1px;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.7);
+        }
+
+        /* Phần nội dung chúc (ẩn ban đầu) */
+        .surprise {
+            display: none;
+        }
+
+        .card {
+            background: linear-gradient(145deg, rgba(20, 30, 60, 0.9), rgba(15, 52, 96, 0.9));
+            border: 2px solid #ffd700;
+            border-radius: 25px;
+            padding: 40px 30px;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+            animation: zoomIn 1s ease;
+            position: relative;
+        }
+
+        .card h1 {
+            color: #ffd700;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .card h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .card p {
+            color: #ddd;
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        /* Điểm 10 to đùng */
+        .score {
+            font-size: 5rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 30px rgba(255, 107, 107, 0.6);
+        }
+
+        .score .ten {
+            font-size: 7rem;
+            color: #ffd700;
+        }
+
+        .delayed {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .d1 { animation-delay: 0.5s; }
+        .d2 { animation-delay: 1s; }
+        .d3 { animation-delay: 1.5s; }
+        .d4 { animation-delay: 2s; }
+        .d5 { animation-delay: 2.5s; }
+        .d6 { animation-delay: 3s; }
+
+        .btn {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            color: #1a1a2e;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 215, 0
